@@ -230,7 +230,7 @@ export default function LoginModal({ setView }) {
                     <span>Secure 256-bit OAuth authentication via Supabase</span>
                   </div>
                   <p className="text-[10px] text-slate-500">
-                    Admin access is automatically enabled upon logging in with <span className="text-brand-orange font-semibold">{ADMIN_EMAIL}</span>
+                    Your account is protected with secure OAuth login
                   </p>
                 </div>
               </div>
