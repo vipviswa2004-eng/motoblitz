@@ -269,7 +269,7 @@ function AdminLogin({ onBackToStore }) {
           <p className="text-xs text-slate-400 mb-6">Sign in with your Google account</p>
 
           <div className="p-3.5 rounded-2xl bg-dark-surface border border-brand-orange/30 text-xs text-brand-orange font-bold mb-6">
-            Authorized Email: <span className="text-white block mt-0.5">viswakumar2004@gmail.com</span>
+            Authorized Admins: <span className="text-white block mt-1 font-mono text-[11px]">viswakumar2004@gmail.com<br />maxthvel@gmail.com</span>
           </div>
 
           <motion.button

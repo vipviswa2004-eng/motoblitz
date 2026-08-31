@@ -141,27 +141,27 @@ CREATE POLICY "Public can view bike models" ON bike_models FOR SELECT TO public 
 CREATE POLICY "Public can insert orders" ON orders FOR INSERT TO public WITH CHECK (true);
 CREATE POLICY "Public can insert order items" ON order_items FOR INSERT TO public WITH CHECK (true);
 
--- Admin full access policy (restricted to viswakumar2004@gmail.com)
+-- Admin full access policy (restricted to viswakumar2004@gmail.com & maxthvel@gmail.com)
 CREATE POLICY "Admin full access on products" ON products FOR ALL TO authenticated
-USING (auth.jwt() ->> 'email' = 'viswakumar2004@gmail.com')
-WITH CHECK (auth.jwt() ->> 'email' = 'viswakumar2004@gmail.com');
+USING (auth.jwt() ->> 'email' IN ('viswakumar2004@gmail.com', 'maxthvel@gmail.com'))
+WITH CHECK (auth.jwt() ->> 'email' IN ('viswakumar2004@gmail.com', 'maxthvel@gmail.com'));
 
 CREATE POLICY "Admin full access on categories" ON categories FOR ALL TO authenticated
-USING (auth.jwt() ->> 'email' = 'viswakumar2004@gmail.com')
-WITH CHECK (auth.jwt() ->> 'email' = 'viswakumar2004@gmail.com');
+USING (auth.jwt() ->> 'email' IN ('viswakumar2004@gmail.com', 'maxthvel@gmail.com'))
+WITH CHECK (auth.jwt() ->> 'email' IN ('viswakumar2004@gmail.com', 'maxthvel@gmail.com'));
 
 CREATE POLICY "Admin full access on orders" ON orders FOR ALL TO authenticated
-USING (auth.jwt() ->> 'email' = 'viswakumar2004@gmail.com')
-WITH CHECK (auth.jwt() ->> 'email' = 'viswakumar2004@gmail.com');
+USING (auth.jwt() ->> 'email' IN ('viswakumar2004@gmail.com', 'maxthvel@gmail.com'))
+WITH CHECK (auth.jwt() ->> 'email' IN ('viswakumar2004@gmail.com', 'maxthvel@gmail.com'));
 
 CREATE POLICY "Admin full access on order_items" ON order_items FOR ALL TO authenticated
-USING (auth.jwt() ->> 'email' = 'viswakumar2004@gmail.com')
-WITH CHECK (auth.jwt() ->> 'email' = 'viswakumar2004@gmail.com');
+USING (auth.jwt() ->> 'email' IN ('viswakumar2004@gmail.com', 'maxthvel@gmail.com'))
+WITH CHECK (auth.jwt() ->> 'email' IN ('viswakumar2004@gmail.com', 'maxthvel@gmail.com'));
 
 CREATE POLICY "Admin full access on banners" ON banners FOR ALL TO authenticated
-USING (auth.jwt() ->> 'email' = 'viswakumar2004@gmail.com')
-WITH CHECK (auth.jwt() ->> 'email' = 'viswakumar2004@gmail.com');
+USING (auth.jwt() ->> 'email' IN ('viswakumar2004@gmail.com', 'maxthvel@gmail.com'))
+WITH CHECK (auth.jwt() ->> 'email' IN ('viswakumar2004@gmail.com', 'maxthvel@gmail.com'));
 
 CREATE POLICY "Admin full access on bike_models" ON bike_models FOR ALL TO authenticated
-USING (auth.jwt() ->> 'email' = 'viswakumar2004@gmail.com')
-WITH CHECK (auth.jwt() ->> 'email' = 'viswakumar2004@gmail.com');
+USING (auth.jwt() ->> 'email' IN ('viswakumar2004@gmail.com', 'maxthvel@gmail.com'))
+WITH CHECK (auth.jwt() ->> 'email' IN ('viswakumar2004@gmail.com', 'maxthvel@gmail.com'));

@@ -3,7 +3,11 @@ import { supabase } from '../lib/supabase';
 
 const AuthContext = createContext(null);
 
-export const ADMIN_EMAIL = 'viswakumar2004@gmail.com';
+export const ADMIN_EMAILS = [
+  'viswakumar2004@gmail.com',
+  'maxthvel@gmail.com',
+];
+export const ADMIN_EMAIL = ADMIN_EMAILS[0];
 const STORAGE_USER_KEY = 'motoblitz_auth_user';
 
 export function AuthProvider({ children }) {
@@ -118,7 +122,10 @@ export function AuthProvider({ children }) {
     localStorage.removeItem(STORAGE_USER_KEY);
   };
 
-  const isAdmin = user?.email?.toLowerCase() === ADMIN_EMAIL.toLowerCase();
+  const isAdmin = Boolean(
+    user?.email &&
+    ADMIN_EMAILS.some(e => e.toLowerCase() === user.email.toLowerCase())
+  );
 
   return (
     <AuthContext.Provider
@@ -127,6 +134,7 @@ export function AuthProvider({ children }) {
         loading,
         isAdmin,
         ADMIN_EMAIL,
+        ADMIN_EMAILS,
         isLoginModalOpen,
         setIsLoginModalOpen,
         signInWithGoogle,
