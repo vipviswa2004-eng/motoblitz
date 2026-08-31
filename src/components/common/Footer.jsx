@@ -183,7 +183,7 @@ export default function Footer({ setView }) {
           © {new Date().getFullYear()} MotoBlitz. All rights reserved. Built for riders, by riders. 🏍️
         </p>
         <p className="text-xs text-slate-700">
-          Made with ❤️ in Tamil Nadu
+          © DEVELOPED BY VISWA
         </p>
       </div>
     </footer>
