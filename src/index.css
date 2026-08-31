@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #0A0B0E;
+    color: #F8FAFC;
+    overflow-x: hidden;
+  }
+
+  /* Custom Superbike Red/Orange Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0A0B0E;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #252A3A;
+    border-radius: 9999px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #E51E2B;
+  }
+}
+
+@layer utilities {
+  .glow-red {
+    box-shadow: 0 0 25px rgba(229, 30, 43, 0.35);
+  }
+
+  .glow-red-sm {
+    box-shadow: 0 0 12px rgba(229, 30, 43, 0.25);
+  }
+
+  .glow-orange {
+    box-shadow: 0 0 25px rgba(255, 110, 26, 0.35);
+  }
+
+  .glow-orange-sm {
+    box-shadow: 0 0 12px rgba(255, 110, 26, 0.25);
+  }
+
+  .racing-clip {
+    clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 14px 100%, 0 calc(100% - 14px));
+  }
+
+  .racing-clip-sm {
+    clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px));
+  }
+
+  .chequered-pattern {
+    background-image: 
+      linear-gradient(45deg, #181B26 25%, transparent 25%), 
+      linear-gradient(-45deg, #181B26 25%, transparent 25%), 
+      linear-gradient(45deg, transparent 75%, #181B26 75%), 
+      linear-gradient(-45deg, transparent 75%, #181B26 75%);
+    background-size: 16px 16px;
+    background-position: 0 0, 0 8px, 8px -8px, -8px 0px;
+  }
+}
